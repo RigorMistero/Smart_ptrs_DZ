@@ -40,8 +40,10 @@ public:
     }
 
     // Overloaded operator * 
-    T& operator*() const {
-        if (!ptr) {
+    T& operator*() const 
+    {
+        if (!ptr) 
+        {
             throw std::runtime_error("Dereferencing null pointer in SimpleUniquePtr");
         }
         return *ptr;
