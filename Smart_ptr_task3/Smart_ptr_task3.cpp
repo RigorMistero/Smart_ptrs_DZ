@@ -41,6 +41,9 @@ public:
 
     // Overloaded operator * 
     T& operator*() const {
+        if (!ptr) {
+            throw std::runtime_error("Dereferencing null pointer in SimpleUniquePtr");
+        }
         return *ptr;
     }
 
@@ -151,5 +154,5 @@ int main(int argc, char** argv)
 
     std::cout << "\n=== End of test ===" << std::endl;
 
-    return 0;
+    return EXIT_SUCCESS;
 }
